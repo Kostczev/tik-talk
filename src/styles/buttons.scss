@@ -1,0 +1,43 @@
+.button {
+    width: 100%;
+    border: none;
+    background: var(--primary-color);
+    color: var(--dark-color);
+    border: 1px solid var(--dark-color);
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-shadow {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        right: -4px;
+        width: 100%;
+        height: 100%;
+        background: var(--gray-color);
+        z-index: -1;
+        border-radius: 4px;
+    }
+}
+
+.button-password-eye {
+    color: var(--light-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    cursor: pointer;
+
+    &.active {
+        color: var(--primary-color);
+    }
+}

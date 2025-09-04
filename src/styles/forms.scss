@@ -1,0 +1,26 @@
+.form {
+    font-family: "JetBrains Mono", sans-serif;
+
+    &__lable {
+        display: block;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+    }
+    &__input {
+        width: 100%;
+        margin-top: 8px;
+        display: block;
+        border: 1px solid var(--light-color);
+        border-radius: 4xp;
+        padding: 12px 20px;
+        background: var(--dark-color);
+        color: var(--light-color);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22hp;
+    }
+    &__input-password {
+        position: relative;
+    }
+}
