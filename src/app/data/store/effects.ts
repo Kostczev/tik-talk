@@ -12,7 +12,7 @@ export class ProfileEffects {
     actions$ = inject(Actions)
 
     filterProfiles = createEffect(() => {
-        this.actions$.pipe(
+        return this.actions$.pipe(
             ofType(profileActions.filterEvents),
             switchMap(({filters}) => {
                 return this.profileService.filterProfiles(filters)

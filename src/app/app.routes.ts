@@ -6,6 +6,10 @@ import { Layout } from './common-ui/layout/layout';
 import { canActivateAuth } from './auth/access.guard';
 import { SettingsPage } from './pages/settings-page/settings-page';
 import { chatsRoutes } from './pages/chats-page/chatsRoutes';
+import { provideState } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
+import { ProfileEffects, profileFeature } from './data';
+// import {} from '/'
 
 export const routes: Routes = [
     {
@@ -13,7 +17,14 @@ export const routes: Routes = [
             {path: '', redirectTo:'profile/me', pathMatch: 'full'},
             {path: 'profile/:id', component: ProfilePage},
             {path: 'settings', component: SettingsPage},
-            {path: 'search', component: SearchPage},
+            {
+                path: 'search',
+                component: SearchPage,
+                providers: [
+                    provideState(profileFeature),
+                    provideEffects(ProfileEffects)
+                ]
+            },
             {
                 path: 'chats', 
                 loadChildren: () => chatsRoutes

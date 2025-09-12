@@ -1,4 +1,3 @@
-import { filter } from 'rxjs';
 import { Profile } from './../interfaces/profile.interface';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
@@ -14,7 +13,6 @@ export class ProfileService {
   baseApiUrl = 'https://icherniakov.ru/yt-course/'
   // me!:Profile
   me = signal<Profile | null>(null)
-  filteredProfiles = signal<Profile[]>([])
 
   getTestAccounts() {
     return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
@@ -61,8 +59,6 @@ export class ProfileService {
       {
         params
       }
-    ).pipe(
-      tap(res => this.filteredProfiles.set(res.items))
     )
   }
 }
