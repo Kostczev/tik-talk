@@ -1,20 +1,28 @@
-@import "reset";
-@import "fonts";
-@import "margins";
-@import "titles";
-@import "forms";
-@import "buttons";
+@use "reset";
+@use "fonts";
+@use "margins";
+@use "titles";
+@use "forms";
+@use "buttons";
+@use "text";
 
 
 :root {
     --dark-color: #000000;
+    --dark-active-color: #161616;
+    --dark-transparency-color: rgba(0, 0, 0, 0.7);
     --dark-hover-color: #161616;
     --light-color: #FFFFFF;
+    --light-transparent-color: rgba(255, 255, 255, 0.8);
     --primary-color: #AE7AFF;
     --gray-color: #5F646D;
+    --message-color: #404040;
+
+    --light-border: 1px solid var(--light-color);
 }
 
 body {
+    height: 100dvh;
     position: relative;
     font-family: "JetBrains Mono", sans-serif;
     background: var(--dark-color);

@@ -2,14 +2,18 @@
     <h1 class="h1 mb60">Вход</h1>
 
     <label class="form__lable mb16">
-        Telegram username
-        <input class="form__input" type="text" name="" id="" formControlName="username" placeholder="Введите логин">
+        <span class="form__lable-text--login form__lable-text">
+            Telegram username
+        </span>
+        <input class="form__input form__input--login" type="text" name="" id="" formControlName="username" placeholder="Введите логин">
     </label>
 
     <label class="form__lable mb32">
-        Пароль
+        <span class="form__lable-text--login form__lable-text">
+            Пароль
+        </span>
         <div class="form__input-password">
-            <input class="form__input" 
+            <input class="form__input form__input--login" 
                 formControlName="password"
                 [type]="isPasswordVisible() ? 'text' : 'password'" 
                 placeholder="Введите пароль"

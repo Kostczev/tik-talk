@@ -1,6 +1,20 @@
 :host {
     display: block;
     padding: 20px 12px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        bottom: -10%;
+        right: -10%;
+        z-index: -1;
+        background: var(--dark-transparency-color);
+        filter: blur(8px) brightness(0.4);
+    }
 }
 
 .main-menu {
@@ -24,6 +38,7 @@
         width: 100%;
         border-radius: 4px;
 
+        &.active,
         &:hover,
         &:focus-visible {
             background: var(--dark-hover-color);
@@ -34,5 +49,54 @@
     &__item-svg {
         width: 16px;
         height: 16px;
+    }
+}
+
+.to-subscribers {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    &__link {
+        color: var(--primary-color);
+    }
+
+    &__icon {
+        width: 18px;
+        height: 18px;
+        color: var(--primary-color);
+    }
+}
+
+.sidebar__footer {
+    position: absolute;
+    width: calc(100% - 24px);
+    bottom: 20px;
+
+    background: var(--dark-hover-color); 
+    border-radius: 4px;
+    padding: 4px 16px;
+    display: grid;
+    grid-template-columns: 32px 1fr 16px;
+    grid-gap: 12px;
+    align-items: center;
+
+    & .username-text {
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+}
+
+.sidebar__footer-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.button-setting {
+    &__img {
+        height: 14px;
+        width: 14px;
+        color: var(--primary-color);
     }
 }

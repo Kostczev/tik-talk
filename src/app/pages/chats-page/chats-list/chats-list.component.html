@@ -1,0 +1,16 @@
+<div class="chat-filters-input__wrapper">
+    <label class="form__lable">
+        <span class="form__lable-text">Имя</span>
+        <input placeholder="Искать..." class="form__input" type="text" [formControl]="filterChatsControl">
+    </label>
+</div>
+
+
+@for (chat of chats$ | async; track chat.id) {
+    <button
+        chats
+        [chat]="chat"
+        [routerLink]="[chat.id]"
+        routerLinkActive="active"
+    ></button>
+}

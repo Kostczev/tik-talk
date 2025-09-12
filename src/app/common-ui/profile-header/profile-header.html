@@ -1,0 +1,8 @@
+@if (profile(); as profile) {
+    <app-avatar-circle [avatarUrl]="profile.avatarUrl"></app-avatar-circle>
+
+    <div class="profile-header__text">
+        <h1 class="profile-header__name h4 mb4">{{profile.firstName}} {{profile.lastName}}</h1>
+        <div class="profile-header__username text-regular">{{profile.username}}</div>
+    </div>
+}

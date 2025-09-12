@@ -2,11 +2,48 @@
 
 <nav class="main-menu">
     <ul class="main-menu__list">
-        <li>
-            <button class="main-menu__item">
-                <svg class="main-menu__item-svg" icon="home"></svg>
-                <div>Моя страница</div>
-            </button>
-        </li>
+        @for(menuItem of menuItems; track menuItem.icon) {
+            <li>
+                <a  
+                    [routerLink]="[menuItem.link]" 
+                    routerLinkActive="active"
+                    class="main-menu__item"
+                >
+                    <svg class="main-menu__item-svg" [icon]="menuItem.icon"></svg>
+                    <div>{{menuItem.lable}}</div>
+                </a>
+            </li>
+        }
     </ul>
 </nav>
+
+<p class="text-medium mb20">Подписчики</p>
+
+@for (profile of subscribers$ | async; track profile.id) {
+    <app-subscriber-card
+        [profile]="profile"
+    ></app-subscriber-card>
+}
+
+<!-- <pre>{{ subscribers$ | async | json }}</pre> -->
+
+<div class="mb20 to-subscribers">
+    <a class="to-subscribers__link text-medium" [routerLink]="['/subscribers']">Все подписчики</a>
+    <svg icon="m-arrow" class="to-subscribers__icon"></svg>
+</div>
+
+<footer class="sidebar__footer">
+    @if (me(); as me) {
+        @if (me.avatarUrl) {
+            <img class="sidebar__footer-img" [src]="me.avatarUrl | imgUrl" alt="">
+        } @else {
+            <img class="sidebar__footer-img" src="/assets/imgs/avatar-placeholder.png" alt="">
+        }
+
+        <div class="text-medium username-text">{{ me.username }}</div>
+
+        <a [routerLink]="['settings']" class="button-setting">
+            <svg class="button-setting__img" icon="settings"></svg>
+        </a>
+    }
+</footer>

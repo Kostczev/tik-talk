@@ -1,0 +1,10 @@
+:host {
+    display: grid;
+    grid-gap: 16px;
+}
+
+.post-wrapper {
+    display: grid;
+    grid-gap: 16px;
+    overflow: auto;
+}
