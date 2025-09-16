@@ -20,8 +20,9 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
-            "outputPath": "dist/tik-talk",
             "baseHref": "/tik-talk/",
+            "deployUrl": "/tik-talk/",
+            "outputPath": "dist/tik-talk",
             "polyfills": [
               "zone.js"
             ],
@@ -30,7 +31,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "/tik-talk/assets/"
               }
             ],
             "styles": [
