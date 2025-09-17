@@ -25,10 +25,14 @@ jobs:
       run: npm ci
       
     - name: Build Angular project
-      run: npm run build -- --configuration production --base-href "/tik-talk/" --deploy-url "/tik-talk/"
+      run: npm run build -- --configuration=production
+
+    - name: Create 404.html for SPA routing
+      run: cp ./dist/browser/index.html ./dist/browser/404.html
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/tik-talk/browser
+        publish_dir: ./dist
         enable_jekyll: false
