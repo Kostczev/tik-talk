@@ -22,7 +22,7 @@
             "browser": "src/main.ts",
             "baseHref": "/tik-talk/",
             "deployUrl": "/tik-talk/",
-            "outputPath": "dist",
+            "outputPath": "dist/tik-talk",
             "polyfills": [
               "zone.js"
             ],
