@@ -27,9 +27,6 @@ jobs:
     - name: Build Angular project
       run: npm run build -- --configuration=production
 
-    - name: Check folder structure
-      run: ls -la dist/ && find dist/ -type f -name "index.html"
-
     - name: Create 404.html for SPA routing
       run: cp ./dist/tik-talk/browser/index.html ./dist/tik-talk/browser/404.html
 
