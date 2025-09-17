@@ -22,7 +22,6 @@
             "browser": "src/main.ts",
             "baseHref": "/tik-talk/",
             "deployUrl": "/tik-talk/",
-            "outputPath": "dist/tik-talk",
             "polyfills": [
               "zone.js"
             ],
@@ -31,8 +30,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public",
-                "output": "/tik-talk/assets/"
+                "input": "public"
               }
             ],
             "styles": [

@@ -28,11 +28,11 @@ jobs:
       run: npm run build -- --configuration=production
 
     - name: Create 404.html for SPA routing
-      run: cp ./dist/browser/index.html ./dist/browser/404.html
+      run: cp ./dist/browser/tik-talk/index.html ./dist/browser/tik-talk/404.html
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/tik-talk
+        publish_dir: ./dist/browser
         enable_jekyll: false
