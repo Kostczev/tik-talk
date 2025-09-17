@@ -10,7 +10,7 @@ import { FormsModule  } from "@angular/forms";
   styleUrl: './avatar-upload.scss'
 })
 export class AvatarUpload {
-  preview = signal<string>('/assets/imgs/avatar-placeholder.png')
+  preview = signal<string>('/tik-talk/assets/imgs/avatar-placeholder.png')
 
   avatar: File | null = null
 
